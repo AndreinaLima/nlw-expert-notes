@@ -116,7 +116,7 @@ export function NewNoteCard({ onNoteCreated }: NewNoteCardProps) {
                   <button
                     type="button"
                     onClick={handleStartRecording}
-                    className="font-medium text-lime-400 hover:underline"
+                    className="font-medium text-orange-400 hover:underline"
                   >
                     {" "}
                     gravando uma nota{" "}
@@ -125,7 +125,7 @@ export function NewNoteCard({ onNoteCreated }: NewNoteCardProps) {
                   <button
                     type="button"
                     onClick={handleStartEditor}
-                    className="font-medium text-lime-400 hover:underline"
+                    className="font-medium text-orange-400 hover:underline"
                   >
                     {" "}
                     utilize apenas texto{" "}
@@ -155,7 +155,7 @@ export function NewNoteCard({ onNoteCreated }: NewNoteCardProps) {
               <button
                 type="button"
                 onClick={handleSaveNote}
-                className="w-full bg-lime-400 py-4 text-center text-sm text-lime-950 outline-none font-medium hover:bg-lime-500"
+                className="w-full bg-orange-400 py-4 text-center text-sm text-orange-100 outline-none font-medium hover:bg-orange-500 duration-200"
               >
                 Salvar nota
               </button>

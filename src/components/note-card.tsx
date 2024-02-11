@@ -72,24 +72,27 @@ export function NoteCard({ note, onNoteDeleted }: NoteCardProps) {
           </button>
 
           {isDeleteDialogOpen && (
-            <div className="flex justify-center gap-2">
-              {" "}
-              
-              <button
-                type="button"
-                onClick={handleNoteDeleteConfirmation}
-                className="w-24 bg-red-500 py-3 text-center text-sm text-white outline-none font-medium hover:bg-red-600"
-              >
-                Sim
-              </button>
-              <button
-                type="button"
-                onClick={handleNoteDeleteCancel}
-                className="w-24 bg-slate-700 py-3 text-center text-sm text-slate-300 outline-none font-medium hover:bg-slate-800"
-              >
-                Não
-              </button>
-            </div>
+            <Dialog.Portal>
+              <Dialog.Overlay className="inset-0 fixed bg-black/50" />
+              <Dialog.Content className="fixed overflow-hidden inset-0 md:inset-auto md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 w-[300px]  h-[100px] bg-slate-700 md:rounded-md flex flex-col justify-center outline-none">
+                <div className="flex justify-center gap-2">
+                  <button
+                    type="button"
+                    onClick={handleNoteDeleteConfirmation}
+                    className="w-24 bg-red-500 rounded-md py-3 text-center text-sm text-white outline-none font-medium hover:bg-red-600"
+                  >
+                    Sim
+                  </button>
+                  <button
+                    type="button"
+                    onClick={handleNoteDeleteCancel}
+                    className="w-24 bg-slate-800 rounded-md py-3 text-center text-sm text-slate-300 outline-none font-medium hover:bg-slate-900"
+                  >
+                    Não
+                  </button>
+                </div>
+              </Dialog.Content>
+            </Dialog.Portal>
           )}
         </Dialog.Content>
       </Dialog.Portal>

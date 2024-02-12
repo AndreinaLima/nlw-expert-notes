@@ -2,7 +2,7 @@ import * as Dialog from "@radix-ui/react-dialog"
 import { formatDistanceToNow } from "date-fns"
 import { ptBR } from "date-fns/locale"
 import { X } from "lucide-react"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 interface NoteCardProps {
   note: {
@@ -74,8 +74,8 @@ export function NoteCard({ note, onNoteDeleted }: NoteCardProps) {
           {isDeleteDialogOpen && (
             <Dialog.Portal>
               <Dialog.Overlay className="inset-0 fixed bg-black/50" />
-              <Dialog.Content className="fixed overflow-hidden inset-0 md:inset-auto md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 w-[300px]  h-[100px] bg-slate-700 md:rounded-md flex flex-col justify-center outline-none">
-                <div className="flex justify-center gap-2">
+              <Dialog.Content className="fixed overflow-hidden inset-0 md:inset-auto md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 w-[300px] h-[100px] bg-slate-700 md:rounded-md outline-none m-auto">
+                <div className="w-full h-full flex justify-center items-center gap-2">
                   <button
                     type="button"
                     onClick={handleNoteDeleteConfirmation}
